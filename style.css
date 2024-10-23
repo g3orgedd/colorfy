@@ -1,0 +1,61 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    background: #282828 !important;
+    font-family: "DM Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.container {
+    text-align: center;
+    max-width: 500px !important;
+    padding: 2rem;
+}
+#openFile {
+    width: 300px;
+    height: 300px;
+    border: .1rem dashed #404040;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#openFile:hover {
+    border-color: #8d8d8d;
+}
+input[type="file"] {
+    display: none;
+}
+label {
+    cursor: pointer;
+    color: #404040;
+    display: grid;
+}
+.color {
+    width: 50%;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.colorContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+.colorName {
+    text-align: center;
+    margin: auto;
+    padding: auto;
+    width: 100%;
+    color: #ffffff;
+    bottom: 0; 
+}
+#symbolInput {
+    margin-bottom: 0.25em;
+}
