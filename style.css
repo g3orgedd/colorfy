@@ -33,6 +33,7 @@ input[type="file"] {
     display: none;
 }
 label {
+    user-select: none;
     cursor: pointer;
     color: #404040;
     display: grid;
@@ -53,9 +54,79 @@ label {
     margin: auto;
     padding: auto;
     width: 100%;
-    color: #ffffff;
-    bottom: 0; 
+    /* color: #ffffff; */
+    /* mix-blend-mode: difference; */
+    /* bottom: 0;  */
 }
 #symbolInput {
     margin-bottom: 0.25em;
+}
+.buttonContainer {
+    margin-top: 0.3rem;
+    justify-content: right;
+    display: none;
+}
+/* .imageButton {
+    width: 50%;
+    border: 0;
+    height: 50px;
+} */
+
+/* CSS */
+.imageButton {
+    width: 50%;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #fff;
+    /* border: 2px solid #000; */
+    /* box-sizing: border-box; */
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    /* fill: #000; */
+    /* font-family: Inter,sans-serif; */
+    font-size: 17px;
+    /* font-weight: 500; */
+    height: 50px;
+    justify-content: center;
+    /* letter-spacing: -.8px; */
+    /* line-height: 24px; */
+    min-width: 140px;
+    /* outline: 0; */
+    /* padding: 0 17px; */
+    text-align: center;
+    text-decoration: none;
+    /* transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation; */
+}
+
+.imageButton:focus {
+    color: #171e29;
+}
+
+.imageButton:hover {
+    border-color: #404040;
+    /* color: #06f; */
+    /* fill: #06f; */
+}
+
+.imageButton:active {
+    border-color: #404040;
+    /* color: #404040; */
+    fill: #404040;
+}
+
+/* @media (min-width: 768px) {
+    .button-59 {
+        min-width: 170px;
+    }
+} */
+#paletteCanvas {
+    display: none;
+}
+
+label:hover {
+    color: #8d8d8d;
 }

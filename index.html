@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
     <script type="module" src="main.js"></script>
-    <title>COLORFY 0.5a</title>
+    <title>colorfy 0.7a</title>
 </head>
 <body>
     <div class="container">
@@ -21,10 +21,15 @@
             <input type="file" id="imageInput" accept="image/*">
             <label for="imageInput">
                 <span class="material-symbols-outlined" id="symbolInput">file_open</span>
-                <span>LOAD IMAGE</span>
+                <span>load image</span>
             </label>
         </div>
         <div class="colorContainer" id="colorPalette"></div>
+        <canvas id="paletteCanvas"></canvas>
+        <div class="buttonContainer" id="bContainer">
+            <!-- <button class="imageButton" id="loadAnotherFile">LOAD ANOTHER IMAGE</button> -->
+            <button class="imageButton" id="savePalette">save palette</button>
+        </div>
     </div>
 </body>
 </html>
