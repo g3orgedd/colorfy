@@ -5,6 +5,7 @@ const colorContainer = document.getElementById('colorPalette');
 const openFile = document.getElementById('openFile');
 const buttonContainer = document.getElementById("bContainer");
 const canvas = document.getElementById("paletteCanvas");
+const easterEgg = document.getElementById("dragLabel");
 const ctx = canvas.getContext('2d');
 
 imageInput.addEventListener('change', async function(event) {
@@ -91,4 +92,13 @@ document.getElementById('savePalette').addEventListener('click', function() {
 
 document.getElementById('loadImage').addEventListener('click', function() {
   imageInput.click();
+});
+
+let meowCounter = 0;
+document.getElementById('dragLabel').addEventListener('click', function() {
+  if (meowCounter == 10) {
+    alert('Я люблю Татьяночку!!!');
+    meowCounter = 0;
+  }
+  meowCounter++;
 });
