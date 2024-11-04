@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=file_open"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=image_search" />
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,21 +13,22 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
     <script type="module" src="main.js"></script>
-    <title>colorfy 0.7a</title>
+    <title>colorfy 0.8b</title>
 </head>
 <body>
     <div class="container">
         <div id="openFile">
             <input type="file" id="imageInput" accept="image/*">
             <label for="imageInput">
-                <span class="material-symbols-outlined" id="symbolInput">file_open</span>
-                <span>load image</span>
+                <span class="material-symbols-outlined" id="symbolInput">image_search</span>
+                <span id="loadText">open image</span>
             </label>
+            <span id="dragLabel">drag image here</span>
         </div>
-        <div class="colorContainer" id="colorPalette"></div>
+        <div class="colorContainer unvisible" id="colorPalette"></div>
         <canvas id="paletteCanvas"></canvas>
         <div class="buttonContainer" id="bContainer">
-            <!-- <button class="imageButton" id="loadAnotherFile">LOAD ANOTHER IMAGE</button> -->
+            <button class="imageButton" id="loadImage">open image</button>
             <button class="imageButton" id="savePalette">save palette</button>
         </div>
     </div>

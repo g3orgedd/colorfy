@@ -13,18 +13,21 @@ body {
     scrollbar-width: none;
 }
 .container {
-    text-align: center;
-    max-width: 500px !important;
-    padding: 2rem;
+    opacity: 0;
+    animation: anim 2s forwards;
 }
 #openFile {
-    width: 300px;
-    height: 300px;
-    border: .1rem dashed #404040;
+    position: relative;
+    width: calc(100vw - 4.5rem);
+    height: calc(100vh - 4.5rem);
+    border: .1rem dashed;
+    border-color: #404040;
+    border-radius: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: border-color .5s ease-in-out;
 }
 #openFile:hover {
     border-color: #8d8d8d;
@@ -33,101 +36,109 @@ input[type="file"] {
     display: none;
 }
 label {
+    padding: 0.938rem;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     cursor: pointer;
     color: #404040;
     display: grid;
+    transition: color 1s ease-in-out !important;
+}
+label:hover {
+    color: #8d8d8d;
+    border-color: #8d8d8d;
 }
 .color {
-    width: 50%;
-    height: 7rem;
+    border-radius: 1rem;
+    margin: .2rem;
+    width: 47%;
+    height: 6rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .colorContainer {
-    display: flex;
+    max-width: 31.25rem !important;
+    padding: 2rem 2rem 0 2rem ;
     flex-wrap: wrap;
+    opacity: 0;
+    animation: anim 2s forwards;
+    justify-content: center;
+}
+.visible {
+    display: flex;
+}
+.unvisible {
+    display: none;
+    transition: opacity 2s ease-in-out;
 }
 .colorName {
+    font-size: 1.063rem;
     text-align: center;
     margin: auto;
     padding: auto;
     width: 100%;
-    /* color: #ffffff; */
-    /* mix-blend-mode: difference; */
-    /* bottom: 0;  */
 }
 #symbolInput {
+    font-size: 1.688rem;
     margin-bottom: 0.25em;
 }
+#loadText {
+    font-size: 1.188rem;
+}
 .buttonContainer {
-    margin-top: 0.3rem;
-    justify-content: right;
-    display: none;
-}
-/* .imageButton {
-    width: 50%;
-    border: 0;
-    height: 50px;
-} */
-
-/* CSS */
-.imageButton {
-    width: 50%;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #fff;
-    /* border: 2px solid #000; */
-    /* box-sizing: border-box; */
-    color: #000;
-    cursor: pointer;
-    display: inline-flex;
-    /* fill: #000; */
-    /* font-family: Inter,sans-serif; */
-    font-size: 17px;
-    /* font-weight: 500; */
-    height: 50px;
+    display: flex;
+    padding: 0 2rem 2rem 2rem;
     justify-content: center;
-    /* letter-spacing: -.8px; */
-    /* line-height: 24px; */
-    min-width: 140px;
-    /* outline: 0; */
-    /* padding: 0 17px; */
-    text-align: center;
-    text-decoration: none;
-    /* transition: all .3s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation; */
-}
-
-.imageButton:focus {
-    color: #171e29;
-}
-
-.imageButton:hover {
-    border-color: #404040;
-    /* color: #06f; */
-    /* fill: #06f; */
-}
-
-.imageButton:active {
-    border-color: #404040;
-    /* color: #404040; */
-    fill: #404040;
-}
-
-/* @media (min-width: 768px) {
-    .button-59 {
-        min-width: 170px;
-    }
-} */
-#paletteCanvas {
     display: none;
 }
-
-label:hover {
-    color: #8d8d8d;
+.imageButton {
+    margin: .2rem;
+    border-radius: 1rem;
+    width: 47%;
+    align-items: center;
+    background-color: #ffffff;
+    border: none !important;
+    color: #404040;
+    cursor: pointer;
+    font-size: 1.188rem;
+    height: 3.125rem;
+    text-decoration:dashed;
+    opacity: 0;
+    animation: anim 2s forwards;
+}
+.imageButton:focus {
+    background-color: #ededed;
+}
+.imageButton:hover {
+    background-color: #ededed;
+}
+.imageButton:active {
+    background-color: #ededed;
+}
+#paletteCanvas {
+    width: 31.25rem;
+    height: 46.875rem;
+    visibility: hidden;
+    display: none;
+}
+#dragLabel {
+    text-decoration: line-through;
+    margin: 0.625rem;
+    color: #404040;
+    position: absolute;
+    bottom: 0;
+    user-select: none;
+}
+@keyframes anim {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@media (height <= 31.25rem) {
+    .colorContainer { flex-wrap: nowrap; }
+    .color { min-width: 4.666rem; }
+    #openFile {
+        width: calc(100vw - 3.125rem);
+        height: calc(100vh - 3.125rem);
+    }
 }
